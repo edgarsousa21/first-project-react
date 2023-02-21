@@ -1,0 +1,1760 @@
+================================================================COMANDOS REACT=======================================================================================
+- Abrir o terminal como administrador e instalar:
+
+npm install -g yarn
+
+yarn add  - nome da biblioteca
+
+yarn dev - Digitar no prompt para executar.
+
+yarn init -y
+
+npx create-react-app my-app ou (npx create-react-app@latest myapp) (exemplo: yarn create react-app other-project-react)
+=====> instalar global em caso de erro(npm install -g create-react-app) e (npx create-react-app < my-app >)
+cd my-app
+npm start
+( npm i -g corepack -  yarn -v )
+
+corepack enable ===> Ativar corepack (Node.js >=16.10)
+
+corepack prepare yarn@stable --activate ===> Atualizando a versão global do Yarn (Node.js ^16.17 ou >=18.6)
+==============================================================================================================
+yarn start
+
+< yarn add styled-components > ou < npm install styled-components > -> instalar no terminal 
+
+instalar - yarn add axios
+  
+// Saber consumir API´s utilizando o AXIOS - Requisito para Emprego.
+
+instalar - yarn add cors - no backend 
+
+instalar - npm install react-router-dom - OU - yarn add react-router-dom
+                       
+GLOBAL:
+instalar - npm install -g react-router-dom - OU - yarn global add react-router-dom
+
+Remover app =====> ( yarn global remove react-router-dom )
+
+CORRIGIR ERROS:
+
+yarn add react-scripts
+
+yarn upgrade --latest react-scripts
+
+npm install react-scripts --save
+=====================================================================================================================================================================
+CORRIGIR ERRO NODEMON
+
+npm config get prefix
+
+set PATH=%PATH%;caminho; => EX: set PATH=%PATH%;C:\Users\edgar\AppData\Roaming\npm;
+
+
+
+=====================================================================================================================================================================
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////                                      
+================================================================INICIANDO NO REACT===================================================================================
+
+01. INTRODUÇÃO AO REACT:================> https://plataforma.devclub.com.br/area/produto/item/259626
+=====================================================================================================================================================================
+02. INSTALANDO O YARN:================> https://plataforma.devclub.com.br/area/produto/item/259627
+
+site: http://yarnpkg.com/getting-started/install
+
+- Abrir o terminal como administrador e instalar:
+
+npm install -g yarn
+
+yarn add  - nome da biblioteca
+
+yarn dev - Digitar no prompt para executar.
+=====================================================================================================================================================================
+03. INICIANDO UM PROJETO REACT:================> https://plataforma.devclub.com.br/area/produto/item/259628
+
+https://pt-br.reactjs.org/docs/create-a-new-react-app.html
+
+npx create-react-app my-app ou (npx create-react-app@latest myapp) ou (yarn create react-app my-app)
+cd my-app
+npm start
+
+corepack enable ===> Ativar corepack (Node.js >=16.10)
+
+corepack prepare yarn@stable --activate ===> Atualizando a versão global do Yarn (Node.js ^16.17 ou >=18.6)
+
+yarn start
+
+William Fgalera era pra ser simples mas aqui não foi.. levei dois dias pra conseguir fazer isso de tanto erro que aconteceu.. uso o Windows agora que consegui instalar usei esse jeito aqui e deu certo..... npx create-react-app@latest myapp (myapp sera a pasta que vai ser criada)..
+=====================================================================================================================================================================
+04. ENTENDENDO A SINTAXE JSX:================> https://plataforma.devclub.com.br/area/produto/item/259629
+
+JSX - Misturar html com javascript
+
+ex:
+import React from 'react'
+
+//JSX - Misturar html com javascript
+const App = () => {
+  const hello = "Hello React"
+  
+  return (
+    <div>     
+      <h1>{hello}</h1>      
+    </div>
+
+  )
+
+}
+
+export default App
+=====================================================================================================================================================================
+05. CSS NO REACT:================> https://plataforma.devclub.com.br/area/produto/item/259630
+
+import React from 'react'
+import './styles.css'
+
+//JSX - Misturar html com javascript
+const App = () => {
+  const hello = "Hello React"
+  
+  return (
+    <div className='container'>     
+      <h1>{hello}</h1>      
+    </div>
+
+  )
+
+}
+
+export default App
+
+styles.css ->
+h1{
+    color: blue;
+}
+
+.container{
+    background-color: red;
+}
+=====================================================================================================================================================================
+06. STYLED COMPONENTS:================> https://plataforma.devclub.com.br/area/produto/item/259631
+http://styled-components.com/ - site css
+
+< yarn add styled-components > ou < npm install styled-components > -> instalar no terminal 
+================================================
+apps.js:
+================================================
+import React from 'react'
+import { Container, H1, P } from './styles' //sem default escreve dessa forma
+
+//JSX - Misturar html com javascript
+const App = () => {
+  const hello = "Hello React"
+
+  return (
+    <Container>
+      <H1>{hello}</H1>
+      <P>Esse é o meu Parágrafo</P>
+      <P>Esse é outro Parágrafo</P>
+    </Container>
+
+  )
+
+}
+
+export default App
+================================================
+styles.js: 
+================================================
+export const Container = styled.div`
+background-color: red;
+`
+export const H1 = styled.h1`
+color: blue;
+font-size: 20px;
+`
+export const P = styled.p`
+color: purple;
+font-size: 14px;
+=====================================================================================================================================================================
+07. ESTRUTURA HTML DO PROJETO:================> https://plataforma.devclub.com.br/area/produto/item/259632
+styles.js:=======>
+
+import styled from 'styled-components'
+
+
+
+export const Container = styled.div`
+`
+
+export const Image = styled.img`
+`
+
+export const ContainerItems = styled.div`
+`
+
+export const H1 = styled.h1`
+`
+
+export const InputLabel = styled.p`
+`
+
+export const Input = styled.input`
+`
+
+export const Button = styled.button`
+`
+
+App.js:=======>
+
+import React from 'react'
+import { Container, Image, ContainerItems, H1, InputLabel, Input, Button } from './styles' //sem default escreve dessa forma
+
+//JSX - Misturar html com javascript
+const App = () => {
+
+
+  return (
+    <Container>
+      <Image />
+      <ContainerItems>
+        <H1>Olá!</H1>
+
+        <InputLabel>Nome</InputLabel>
+        <Input placeholder='Nome' />
+
+        <InputLabel>Idade</InputLabel>
+        <Input placeholder='Idade' />
+
+        <Button>Cadastrar</Button>
+
+      </ContainerItems>
+    </Container>
+
+  )
+
+}
+
+export default App
+=====================================================================================================================================================================
+08. IMAGENS NO REACT:================> https://plataforma.devclub.com.br/area/produto/item/259633
+
+// STYLES.JS=======>
+
+import styled from 'styled-components'
+import Background from './assets/background.svg'
+
+
+export const Container = styled.div`
+    background: url("${Background}");
+    background-size: cover;
+`
+
+export const Image = styled.img`
+`
+
+export const ContainerItems = styled.div`
+`
+
+export const H1 = styled.h1`
+`
+
+export const InputLabel = styled.p`
+`
+
+export const Input = styled.input`
+`
+
+export const Button = styled.button`
+`
+// App.js:=======>
+
+import React from 'react'
+import { Container, Image, ContainerItems, H1, InputLabel, Input, Button } from './styles' //sem default escreve dessa forma
+
+//JSX - Misturar html com javascript
+const App = () => {
+
+
+  return (
+    <Container>
+      <Image />
+      <ContainerItems>
+        <H1>Olá!</H1>
+
+        <InputLabel>Nome</InputLabel>
+        <Input placeholder='Nome' />
+
+        <InputLabel>Idade</InputLabel>
+        <Input placeholder='Idade' />
+
+        <Button>Cadastrar</Button>
+
+      </ContainerItems>
+    </Container>
+
+  )
+
+}
+
+export default App
+
+=====================================================================================================================================================================
+09. ESTILOS GLOBAIS NO REACT:================> https://plataforma.devclub.com.br/area/produto/item/259634
+
+// globalStyles.js:=======>
+
+import { createGlobalStyle } from "styled-components";
+
+export default createGlobalStyle` 
+                                  
+                                  
+ * {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+ }
+ 
+ `
+ // pode se assim tb:  const globalStyle = create createGlobalStyle`
+ // `
+ // export default globalStyle 
+
+// index.js:=======>
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import GlobalStyle from './globalStyle';
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<><App /> <GlobalStyle /></>);
+ 
+
+// ReactDOM.render(<>
+// <App /> <GlobalStyle />
+// </>, 
+// document.getElementById("root"));
+
+=====================================================================================================================================================================
+10. ESTILIZANDO A APLICAÇÃO:================> https://plataforma.devclub.com.br/area/produto/item/259635
+
+// App.js:=======>
+
+import React from 'react'
+import People from './assets/people.svg'
+import Arrow from './assets/arrow.svg'
+import { Container, Image, ContainerItems, H1, InputLabel, Input, Button } from './styles' //sem default escreve dessa forma
+
+//JSX - Misturar html com javascript
+const App = () => {
+
+
+  return (
+    <Container>
+      <Image alt='logo-imagem' src={People}/>
+      <ContainerItems>
+        <H1>Olá!</H1>
+
+        <InputLabel>Nome</InputLabel>
+        <Input placeholder='Nome' />
+
+        <InputLabel>Idade</InputLabel>
+        <Input placeholder='Idade' />
+
+        <Button>Cadastrar <img alt='seta' src={Arrow}/> </Button>
+
+      </ContainerItems>
+    </Container>
+
+  )
+
+}
+
+export default App
+
+// STYLES.JS=======>
+
+import styled from 'styled-components'
+import Background from './assets/background.svg'
+
+
+export const Container = styled.div`
+    background: url("${Background}");
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    height: 130vh;
+`
+
+export const Image = styled.img`
+margin-top: 30px;
+`
+
+export const ContainerItems = styled.div`
+background: linear-gradient(157.44deg, 
+    rgba(255, 255, 255, 0.6) 0.84%, 
+    rgba(255, 255, 255, 0.6) 0.85%, 
+    rgba(255, 255, 255, 0.15) 100%);
+border-radius: 61px 61px 0px 0px;
+
+padding: 50px 36px;
+
+display: flex;
+flex-direction: column;
+
+height: 130vh;
+`
+
+export const H1 = styled.h1`
+font-style: normal;
+font-weight: 700;
+font-size: 34px;
+line-height: 40px;
+text-align: center;
+color: #FFFFFF;
+margin-bottom: 80px;
+`
+
+export const InputLabel = styled.p`
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 22px;
+letter-spacing: -0.408px;
+color: #EEEEEE;
+margin-left: 25px;
+`
+
+export const Input = styled.input`
+width: 342px;
+height: 58px;
+padding-left: 25px;
+margin-bottom: 34px;
+background: rgba(255, 255, 255, 0.25);
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 14px;
+border: none;
+outline: none;
+
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 28px;
+color: #FFFFFF;
+`
+
+export const Button = styled.button`
+cursor: pointer;
+
+width: 342px;
+height: 74px;
+
+
+background: rgba(0, 0, 0, 0.8);
+border-radius: 14px;
+border: none;
+
+font-style: normal;
+font-weight: 700;
+font-size: 17px;
+line-height: 28px;
+
+color: #FFFFFF;
+
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 20px;
+=====================================================================================================================================================================
+11. FINALIZANDO A ESTILIZAÇÃO:================> https://plataforma.devclub.com.br/area/produto/item/259636
+APLICAR NO BOTÃO:========>
+
+&:hover{
+    opacity: 0.8;
+}
+
+&:active{
+    opacity: 0.5;
+}
+
+// COPIAR E COLAR NO: <public/index.html>========>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+
+// COPIAR E COLAR NO: <src/globalStyle.js>========>
+ `
+font-family: 'Roboto', sans-serif;
+=====================================================================================================================================================================
+12. RENDERIZANDO VÁRIOS ITENS NO REACT:================> https://plataforma.devclub.com.br/area/produto/item/259637
+
+EM Apps,js:=======> obs. acaba ficando ineficaz fazer um por um na lista
+const users = [
+    { id: Math.random(), name: "Edgar", age: 41 },
+    { id: Math.random(), name: "Sandra", age: 53 },
+  ]
+=====================================================
+ <ul>
+          <li>{users[0].name} - {users[0].age}</li>
+          <li>{users[1].name} - {users[1].age}</li>
+        </ul>
+=====================================================
+// App.js:=======>
+
+import React from 'react'
+import People from './assets/people.svg'
+import Arrow from './assets/arrow.svg'
+import { Container, Image, ContainerItems, H1, InputLabel, Input, Button } from './styles' //sem default escreve dessa forma
+
+//JSX - Misturar html com javascript
+const App = () => {
+  const users = [
+    { id: Math.random(), name: "Edgar", age: 41 },
+    { id: Math.random(), name: "Sandra", age: 53 },
+  ]
+
+  return (
+    <Container>
+      <Image alt='logo-imagem' src={People} />
+      <ContainerItems>
+        <H1>Olá!</H1>
+
+        <InputLabel>Nome</InputLabel>
+        <Input placeholder='Nome' />
+
+        <InputLabel>Idade</InputLabel>
+        <Input placeholder='Idade' />
+
+        <Button>Cadastrar <img alt='seta' src={Arrow} /> </Button>
+
+        <ul>
+          {users.map(user => (
+            <li key={user.id}>
+              {user.name} - {user.age}
+            </li>
+          ))
+          }
+        </ul>
+
+      </ContainerItems>
+    </Container>
+
+  )
+
+}
+
+export default App
+=====================================================================================================================================================================
+13. ESTILIZANDO CARD DE USUÁRIO:================> https://plataforma.devclub.com.br/area/produto/item/279519
+
+// App.js:=======>
+
+import React from 'react'
+import People from './assets/people.svg'
+import Arrow from './assets/arrow.svg'
+import Trash from './assets/trash.svg'
+import { Container, Image, ContainerItems, H1, InputLabel, Input, Button, User } from './styles' //sem default escreve dessa forma
+
+//JSX - Misturar html com javascript
+const App = () => {
+  const users = [
+    { id: Math.random(), name: "Edgar", age: 41 },
+    { id: Math.random(), name: "Sandra", age: 53 },
+  ]
+
+  return (
+    <Container>
+      <Image alt='logo-imagem' src={People} />
+      <ContainerItems>
+        <H1>Olá!</H1>
+
+        <InputLabel>Nome</InputLabel>
+        <Input placeholder='Nome' />
+
+        <InputLabel>Idade</InputLabel>
+        <Input placeholder='Idade' />
+
+        <Button>Cadastrar <img alt='seta' src={Arrow} /> </Button>
+
+        <ul>
+          {users.map(user => (
+            <User key={user.id}>
+              <p>{user.name}</p>  <p>{user.age}</p>
+              <button><img src={Trash} alt='lata-de-lixo'/></button>
+            </User> 
+          ))
+          }
+        </ul>
+
+      </ContainerItems>
+    </Container>
+
+  )
+
+}
+
+export default App
+
+// STYLES.JS=======>
+
+import styled from 'styled-components'
+import Background from './assets/background.svg'
+
+
+export const Container = styled.div`
+    background: url("${Background}");
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    height: 130vh;
+`
+
+export const Image = styled.img`
+margin-top: 30px;
+`
+
+export const ContainerItems = styled.div`
+background: linear-gradient(157.44deg, 
+    rgba(255, 255, 255, 0.6) 0.84%, 
+    rgba(255, 255, 255, 0.6) 0.85%, 
+    rgba(255, 255, 255, 0.15) 100%);
+border-radius: 61px 61px 0px 0px;
+
+padding: 50px 36px;
+
+display: flex;
+flex-direction: column;
+
+height: 130vh;
+`
+
+export const H1 = styled.h1`
+font-style: normal;
+font-weight: 700;
+font-size: 34px;
+line-height: 40px;
+text-align: center;
+color: #FFFFFF;
+margin-bottom: 80px;
+`
+
+export const InputLabel = styled.p`
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 22px;
+letter-spacing: -0.408px;
+color: #EEEEEE;
+margin-left: 25px;
+`
+
+export const Input = styled.input`
+width: 342px;
+height: 58px;
+padding-left: 25px;
+margin-bottom: 34px;
+background: rgba(255, 255, 255, 0.25);
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 14px;
+border: none;
+outline: none;
+
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 28px;
+color: #FFFFFF;
+`
+
+export const Button = styled.button`
+cursor: pointer;
+
+width: 342px;
+height: 74px;
+
+
+background: rgba(0, 0, 0, 0.8);
+border-radius: 14px;
+border: none;
+
+font-style: normal;
+font-weight: 700;
+font-size: 17px;
+line-height: 28px;
+
+color: #FFFFFF;
+
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 20px;
+
+&:hover{
+    opacity: 0.8;
+}
+
+&:active{
+    opacity: 0.5;
+}
+`
+export const User = styled.li`
+display: flex;
+justify-content: space-around;
+align-items: center; 
+margin-top: 20px;
+
+background: rgba(255, 255, 255, 0.25);
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 14px;
+
+width: 342px;
+height: 58px;  
+
+border: none;
+outline: none;
+
+p{
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 28px;
+
+color: #FFFFFF;
+}
+
+button {
+background: none;
+border: none;
+cursor: pointer;    
+}
+=====================================================================================================================================================================
+14. ENTENDENDO O CONCEITO DE ESTADO NO REACT:================> https://plataforma.devclub.com.br/area/produto/item/259638
+
+
+//VARIÁVEEIS DE ESTADO SÃO RENDERIZADAS SEMPRE QUE ADICIONO OU REMOVO ITENS
+//REACT HOOKS => FERRAMENTAS AUXILIARES
+//UM ESTADO NO REACT É IMUTÁVEL`
+
+// App.js:=======>
+
+import React, { useState } from 'react'
+import People from './assets/people.svg'
+import Arrow from './assets/arrow.svg'
+import Trash from './assets/trash.svg'
+import { Container, Image, ContainerItems, H1, InputLabel, Input, Button, User } from './styles' //sem default escreve dessa forma
+
+//JSX - Misturar html com javascript
+// { id: Math.random(), name: "Edgar", age: 41 },
+// { id: Math.random(), name: "Sandra", age: 53 },
+function App() {
+  const [users, setUsers] = useState([]) // ASSIM CRIAMOS UM ESTADO NO REACT
+
+
+  function addNewUser() {
+    setUsers([{ id: Math.random(), name: "Edgar", age: 41 }])
+  }
+
+
+
+  return (
+    <Container>
+      <Image alt='logo-imagem' src={People} />
+      <ContainerItems>
+        <H1>Olá!</H1>
+
+        <InputLabel>Nome</InputLabel>
+        <Input placeholder='Nome' />
+
+        <InputLabel>Idade</InputLabel>
+        <Input placeholder='Idade' />
+
+        <Button onClick={addNewUser}>
+          Cadastrar <img alt='seta' src={Arrow} />
+        </Button>
+
+        <ul>
+          {users.map(user => (
+            <User key={user.id}>
+              <p>{user.name}</p>  <p>{user.age}</p>
+              <button><img src={Trash} alt='lata-de-lixo' /></button>
+            </User>
+          ))
+          }
+        </ul>
+
+      </ContainerItems>
+    </Container>
+
+  )
+
+}
+
+export default App
+
+
+
+`
+
+=====================================================================================================================================================================
+15. PEGANDO VALORES DOS INPUTS:================> https://plataforma.devclub.com.br/area/produto/item/259639
+
+// App.js:=======>
+
+import React, { useState } from 'react'
+import People from './assets/people.svg'
+import Arrow from './assets/arrow.svg'
+import Trash from './assets/trash.svg'
+import { Container, Image, ContainerItems, H1, InputLabel, Input, Button, User } from './styles' //sem default escreve dessa forma
+
+//JSX - Misturar html com javascript
+// { id: Math.random(), name: "Edgar", age: 41 },
+// { id: Math.random(), name: "Sandra", age: 53 },
+function App() {
+  const [users, setUsers] = useState([]) // ASSIM CRIAMOS UM ESTADO NO REACT
+  const [name, setName] = useState() 
+  const [age, setAge] = useState() 
+
+  function addNewUser() {
+    setUsers([{id: Math.random(), name, age}])    
+  }
+
+  function changeInputName(event) {
+    setName(event.target.value)
+  }
+
+  function changeInputAge(event) {
+    setAge(event.target.value)
+    
+  }
+
+
+  return (
+    <Container>
+      <Image alt='logo-imagem' src={People} />
+      <ContainerItems>
+        <H1>Olá!</H1>
+
+        <InputLabel>Nome</InputLabel>
+        <Input onChange={changeInputName} placeholder='Nome' />
+
+        <InputLabel>Idade</InputLabel>
+        <Input onChange={changeInputAge} placeholder='Idade' />
+
+        <Button onClick={addNewUser}>
+          Cadastrar <img alt='seta' src={Arrow} />
+        </Button>
+
+        <ul>
+          {users.map(user => (
+            <User key={user.id}>
+              <p>{user.name}</p>  <p>{user.age}</p>
+              <button><img src={Trash} alt='lata-de-lixo' /></button>
+            </User>
+          ))
+          }
+        </ul>
+
+      </ContainerItems>
+    </Container>
+
+  )
+
+}
+
+export default App
+
+=====================================================================================================================================================================
+16. SPREAD OPERATOR:================> https://plataforma.devclub.com.br/area/produto/item/259640
+
+// App.js:=======>
+
+import React, { useState } from 'react'
+import People from './assets/people.svg'
+import Arrow from './assets/arrow.svg'
+import Trash from './assets/trash.svg'
+import { Container, Image, ContainerItems, H1, InputLabel, Input, Button, User } from './styles' //sem default escreve dessa forma
+
+//JSX - Misturar html com javascript
+// { id: Math.random(), name: "Edgar", age: 41 },
+// { id: Math.random(), name: "Sandra", age: 53 },
+function App() {
+  const [users, setUsers] = useState([]) // ASSIM CRIAMOS UM ESTADO NO REACT
+  const [name, setName] = useState() 
+  const [age, setAge] = useState() 
+
+  function addNewUser() {
+    setUsers([...users, {id: Math.random(), name, age}])  
+    console.log(users)  
+  }
+
+  function changeInputName(event) {
+    setName(event.target.value)
+  }
+
+  function changeInputAge(event) {
+    setAge(event.target.value)
+    
+  }
+
+
+  return (
+    <Container>
+      <Image alt='logo-imagem' src={People} />
+      <ContainerItems>
+        <H1>Olá!</H1>
+
+        <InputLabel>Nome</InputLabel>
+        <Input onChange={changeInputName} placeholder='Nome' />
+
+        <InputLabel>Idade</InputLabel>
+        <Input onChange={changeInputAge} placeholder='Idade' />
+
+        <Button onClick={addNewUser}>
+          Cadastrar <img alt='seta' src={Arrow} />
+        </Button>
+
+        <ul>
+          {users.map(user => (
+            <User key={user.id}>
+              <p>{user.name}</p>  <p>{user.age}</p>
+              <button><img src={Trash} alt='lata-de-lixo' /></button>
+            </User>
+          ))
+          }
+        </ul>
+
+      </ContainerItems>
+    </Container>
+
+  )
+
+}
+
+export default App
+
+
+=====================================================================================================================================================================
+17. APRENDENDO REACT HOOK - USE REF:================> https://plataforma.devclub.com.br/area/produto/item/259641      
+
+// App.js:=======>
+
+import React, { useState, useRef } from 'react'
+import People from './assets/people.svg'
+import Arrow from './assets/arrow.svg'
+import Trash from './assets/trash.svg'
+import { Container, Image, ContainerItems, H1, InputLabel, Input, Button, User } from './styles' //sem default escreve dessa forma
+
+//JSX - Misturar html com javascript
+// { id: Math.random(), name: "Edgar", age: 41 },
+// { id: Math.random(), name: "Sandra", age: 53 },
+function App() {
+  const [users, setUsers] = useState([]) // ASSIM CRIAMOS UM ESTADO NO REACT
+  const inputName = useRef()
+  const inputAge = useRef()
+
+  function addNewUser() {
+    console.log(inputName.current.value)
+    console.log(inputAge.current.value)
+    setUsers([...users, { id: Math.random(), name: inputName.current.value, age: inputAge.current.value }])
+
+  }
+
+
+  return (
+    <Container>
+      <Image alt='logo-imagem' src={People} />
+      <ContainerItems>
+        <H1>Olá!</H1>
+
+        <InputLabel>Nome</InputLabel>
+        <Input ref={inputName} placeholder='Nome' />
+
+        <InputLabel>Idade</InputLabel>
+        <Input ref={inputAge} placeholder='Idade' />
+
+        <Button onClick={addNewUser}>
+          Cadastrar <img alt='seta' src={Arrow} />
+        </Button>
+
+        <ul>
+          {users.map(user => (
+            <User key={user.id}>
+              <p>{user.name}</p>  <p>{user.age}</p>
+              <button><img src={Trash} alt='lata-de-lixo' /></button>
+            </User>
+          ))
+          }
+        </ul>
+
+      </ContainerItems>
+    </Container>
+
+  )
+
+}
+
+export default App    
+
+=====================================================================================================================================================================
+18. DELETANDO USUÁRIOS:================> https://plataforma.devclub.com.br/area/produto/item/259642     
+
+// App.js:=======>
+
+import React, { useState, useRef } from 'react'
+import People from './assets/people.svg'
+import Arrow from './assets/arrow.svg'
+import Trash from './assets/trash.svg'
+import { Container, Image, ContainerItems, H1, InputLabel, Input, Button, User } from './styles' //sem default escreve dessa forma
+
+//JSX - Misturar html com javascript
+// { id: Math.random(), name: "Edgar", age: 41 },
+// { id: Math.random(), name: "Sandra", age: 53 },
+function App() {
+  const [users, setUsers] = useState([]) // ASSIM CRIAMOS UM ESTADO NO REACT
+  const inputName = useRef()
+  const inputAge = useRef()
+
+  function addNewUser() {
+    console.log(inputName.current.value)
+    console.log(inputAge.current.value)
+    setUsers([...users, { id: Math.random(), name: inputName.current.value, age: inputAge.current.value }])
+  }
+
+  function deleteUser(userId) {
+    const newUsers = users.filter(user => user.id !== userId)
+    setUsers(newUsers)
+  }
+
+
+  return (
+    <Container>
+      <Image alt='logo-imagem' src={People} />
+      <ContainerItems>
+        <H1>Olá!</H1>
+
+        <InputLabel>Nome</InputLabel>
+        <Input ref={inputName} placeholder='Nome' />
+
+        <InputLabel>Idade</InputLabel>
+        <Input ref={inputAge} placeholder='Idade' />
+
+        <Button onClick={addNewUser}>
+          Cadastrar <img alt='seta' src={Arrow} />
+        </Button>
+
+        <ul>
+          {users.map(user => (
+            <User key={user.id}>
+              <p>{user.name}</p>  <p>{user.age}</p>
+              <button onClick={() => deleteUser(user.id)}>
+                <img src={Trash} alt='lata-de-lixo' />
+              </button>
+            </User>
+          ))
+          }
+        </ul>
+
+      </ContainerItems>
+    </Container>
+
+  )
+
+}
+
+export default App
+
+================================================================CONTINUANDO APLICAÇÃO COM REACT======================================================================
+                                                                         TERCEIRO MÓDULO
+=====================================================================================================================================================================
+01. CONECTANDO FRONT-END E BACK-END:================> https://plataforma.devclub.com.br/area/produto/item/259643
+
+
+
+instalar - yarn add axios
+  
+// Saber consumir API´s utilizando o AXIOS - Requisito para Emprego.
+
+instalar - yarn add cors - no backend
+
+FRONT END =================>
+
+// App.js:=======>
+
+import React, { useState, useRef } from 'react'
+
+import Axios from 'axios'
+import People from './assets/people.svg'
+import Arrow from './assets/arrow.svg'
+import Trash from './assets/trash.svg'
+import { Container, Image, ContainerItems, H1, InputLabel, Input, Button, User } from './styles' //sem default escreve dessa forma
+
+//JSX - Misturar html com javascript
+// { id: Math.random(), name: "Edgar", age: 41 },
+// { id: Math.random(), name: "Sandra", age: 53 },
+function App() {
+  const [users, setUsers] = useState([]) // ASSIM CRIAMOS UM ESTADO NO REACT
+  const inputName = useRef()
+  const inputAge = useRef()
+
+  async function addNewUser() {
+    const data = await Axios.post("http://localhost:3001/users", { 
+      name: inputName.current.value, 
+      age: inputAge.current.value, 
+    })
+    console.log(data)
+
+
+    // console.log(inputName.current.value)
+    // console.log(inputAge.current.value)
+    // setUsers([...users, { id: Math.random(), name: inputName.current.value, age: inputAge.current.value }])    
+  }
+
+
+
+  function deleteUser(userId) {
+    const newUsers = users.filter(user => user.id !== userId)
+    setUsers(newUsers)
+  }
+
+
+  return (
+    <Container>
+      <Image alt='logo-imagem' src={People} />
+      <ContainerItems>
+        <H1>Olá!</H1>
+
+        <InputLabel>Nome</InputLabel>
+        <Input ref={inputName} placeholder='Nome' />
+
+        <InputLabel>Idade</InputLabel>
+        <Input ref={inputAge} placeholder='Idade' />
+
+        <Button onClick={addNewUser}>
+          Cadastrar <img alt='seta' src={Arrow} />
+        </Button>
+
+        <ul>
+          {users.map(user => (
+            <User key={user.id}>
+              <p>{user.name}</p>  <p>{user.age}</p>
+              <button onClick={() => deleteUser(user.id)}>
+                <img src={Trash} alt='lata-de-lixo' />
+              </button>
+            </User>
+          ))
+          }
+        </ul>
+
+      </ContainerItems>
+    </Container>
+
+  )
+
+}
+
+export default App
+
+/*
+import logo from './logo.svg';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+}
+
+export default App;
+
+*/
+
+BACK END =================>
+
+//  http://localhost:3000/users
+
+
+const express = require('express')
+const uuid = require('uuid')
+const cors = require('cors')
+
+
+// import express from 'express'
+// import uuid from 'uuid'
+// import cors from 'cors'
+
+const port = 3001
+const app = express()
+app.use(express.json())
+app.use(cors())
+
+// app.get('/users', (request, response) =>{
+//     // const name = request.query.name
+//     // const age = request.query.age
+//     // console.log(name, age)
+
+//     const {name, age, profission} = request.query //Destructuring assignment
+//     return response.json({name, age, profission})
+
+//     // return response.send('Hello Express')
+// } )
+//===========================================================================================================================================
+// app.get('/users/:id', (request, response) =>{    
+//     const {id} = request.params
+//     console.log(id)
+//     //return response.send('Hello Express')
+
+//     return response.json({id})
+// } )
+//===========================================================================================================================================
+/*
+        - Query params => meusite.com/users?name=edgar&age=41  //FILTROS
+        - Route params => /users/2      //BUSCAR, DELETAR OU ATUALIZAR ALGO ESPECÍFICO 
+        - Request Body =>  {"name":"Edgar", "age":41}  
+        
+        - GET        => Buscar informação no back-end
+        - POST       => Criar informação no back-end
+        - PUT /PATCH => Atualizar /Alterar  informação no back-end
+        - DELETE     => Deletar informação no back-end
+
+        - Middleware => INTECEPTADOR => Tem o poder de parar ou alterar dados da requisição
+        
+
+*/
+
+//===========================================================================================================================================
+
+// const users = []
+// app.get('/users', (request, response) => {
+
+//     return response.json({ users })
+// })
+
+// app.post('/users', (request, response) => {
+//     const { name, age } = request.body
+
+//     //console.log(uuid.v4())
+
+//     const user = { id: uuid.v4(), name, age }
+
+//     users.push(user)
+
+//     return response.status(201).json(user)
+
+// })
+
+// app.put('/users/:id', (request, response) => {
+//     const { id } = request.params
+//     const { name, age } = request.body
+//     const updatedUser = { id, name, age }
+//     const index = users.findIndex(user => user.id === id)
+//     if (index < 0) {
+//         return response.status(404).json({ message: "User Not Found" })
+//     }
+//     users[index] = updatedUser
+//     return response.json(updatedUser)
+// })
+
+// app.delete('/users/:id', (request, response) => {
+//     const { id } = request.params
+//     const index = users.findIndex(user => user.id === id)
+//     if (index < 0) {
+//         return response.status(404).json({ message: "User Not Found" })
+//     }
+//     users.splice(index, 1)
+//     return response.status(204).json()
+
+// })
+
+// app.listen(port, () => {
+//     console.log(`😎 Server Started om Port ${port} 😎`)
+// })
+
+//===========================================================================================================================================
+
+// CODIGO ENCURTADO MIDDLEWARE
+
+const users = []
+
+const checkUserId = (request, response, next)  => {
+    const { id } = request.params
+    const index = users.findIndex(user => user.id === id)
+    if (index < 0) {
+        return response.status(404).json({ Error: "User Not Found" })    
+    }
+    request.userIndex = index 
+    request.userId = id
+
+    next()
+}
+
+
+app.get('/users', (request, response) => {
+
+    return response.json({ users })
+})
+
+app.post('/users', (request, response) => {
+    const { name, age } = request.body
+
+    //console.log(uuid.v4())
+
+    const user = { id: uuid.v4(), name, age }
+
+    users.push(user)
+  
+
+    return response.status(201).json(user)
+
+})
+
+app.put('/users/:id', checkUserId, (request, response) => {    
+    const { name, age } = request.body
+    const index = request.userIndex
+    const id = request.userId 
+    const updatedUser = { id, name, age }
+   
+    users[index] = updatedUser
+    return response.json(updatedUser)
+})
+
+app.delete('/users/:id',checkUserId, (request, response) => {    
+    const index = request.userIndex
+    users.splice(index, 1)
+    return response.status(204).json()
+
+})
+
+app.listen(port, () => {
+    console.log(`😎 Server Started om Port ${port} 😎`)
+})
+
+=====================================================================================================================================================================
+02. CADASTRANDO NOVOS USUÁRIOS NO BACK-END:================> https://plataforma.devclub.com.br/area/produto/item/259644
+
+// App.js:=======>
+
+import React, { useState, useRef } from 'react'
+
+import Axios from 'axios'
+import People from './assets/people.svg'
+import Arrow from './assets/arrow.svg'
+import Trash from './assets/trash.svg'
+import { Container, Image, ContainerItems, H1, InputLabel, Input, Button, User } from './styles' //sem default escreve dessa forma
+
+//JSX - Misturar html com javascript
+// { id: Math.random(), name: "Edgar", age: 41 },
+// { id: Math.random(), name: "Sandra", age: 53 },
+function App() {
+  const [users, setUsers] = useState([]) // ASSIM CRIAMOS UM ESTADO NO REACT
+  const inputName = useRef()
+  const inputAge = useRef()
+
+  async function addNewUser() {
+    const { data: newUser } = await Axios.post("http://localhost:3001/users", { 
+      name: inputName.current.value, 
+      age: inputAge.current.value, 
+    })
+    
+
+
+    // console.log(inputName.current.value)
+    // console.log(inputAge.current.value)
+    setUsers([...users, newUser])    
+  }
+
+
+
+  function deleteUser(userId) {
+    const newUsers = users.filter(user => user.id !== userId)
+    setUsers(newUsers)
+  }
+
+
+  return (
+    <Container>
+      <Image alt='logo-imagem' src={People} />
+      <ContainerItems>
+        <H1>Olá!</H1>
+
+        <InputLabel>Nome</InputLabel>
+        <Input ref={inputName} placeholder='Nome' />
+
+        <InputLabel>Idade</InputLabel>
+        <Input ref={inputAge} placeholder='Idade' />
+
+        <Button onClick={addNewUser}>
+          Cadastrar <img alt='seta' src={Arrow} />
+        </Button>
+
+        <ul>
+          {users.map(user => (
+            <User key={user.id}>
+              <p>{user.name}</p>  <p>{user.age}</p>
+              <button onClick={() => deleteUser(user.id)}>
+                <img src={Trash} alt='lata-de-lixo' />
+              </button>
+            </User>
+          ))
+          }
+        </ul>
+
+      </ContainerItems>
+    </Container>
+
+  )
+
+}
+
+export default App
+
+/*
+import logo from './logo.svg';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+}
+
+export default App;
+
+*/
+
+
+=====================================================================================================================================================================
+03. RECUPERANDO USUÁRIOS NO BACK-END:================> https://plataforma.devclub.com.br/area/produto/item/259645
+
+
+
+const { data: newUsers } = await Axios.get("http://localhost:3001/users")
+setUsers(newUsers)
+
+=====================================================================================================================================================================
+04. APRENDENDO SOBRE O REACT HOOK - USEEFFECT:================> https://plataforma.devclub.com.br/area/produto/item/259646
+
+
+   useEffect(() => {
+
+   },[])
+
+// App.js:=======>
+
+import React, { useState, useRef, useEffect } from 'react'
+
+import Axios from 'axios'
+import People from './assets/people.svg'
+import Arrow from './assets/arrow.svg'
+import Trash from './assets/trash.svg'
+import { Container, Image, ContainerItems, H1, InputLabel, Input, Button, User } from './styles' //sem default escreve dessa forma
+
+//JSX - Misturar html com javascript
+// { id: Math.random(), name: "Edgar", age: 41 },
+// { id: Math.random(), name: "Sandra", age: 53 },
+function App() {
+  const [users, setUsers] = useState([]) // ASSIM CRIAMOS UM ESTADO NO REACT
+  const inputName = useRef()
+  const inputAge = useRef()
+
+  async function addNewUser() {
+    const { data: newUser } = await Axios.post("http://localhost:3001/users", { 
+      name: inputName.current.value, 
+      age: inputAge.current.value, 
+    })
+    setUsers([...users, newUser]) 
+    // console.log(inputName.current.value)
+    // console.log(inputAge.current.value) 
+        
+  }
+//========================================================================================
+  /*
+//REACT HOOK => USEEFFECT (Efeito Colateral) // () =>{}
+
+A função é chamada quando (2 Condições): 
+A minha aplicação inicia. (A página carregou useEffect é chamado!).
+Quando um estado que está no array de dependênciado useEffect é alterado.
+*/
+  useEffect(() => {
+
+    async function fetchUsers() {
+
+      const { data: newUsers } = await Axios.get("http://localhost:3001/users")
+
+      setUsers(newUsers)
+    }
+
+    fetchUsers()
+
+  }, [])
+
+//=========================================================================================
+
+  function deleteUser(userId) {
+    const newUsers = users.filter(user => user.id !== userId)
+    setUsers(newUsers)
+  }
+
+
+  return (
+    <Container>
+      <Image alt='logo-imagem' src={People} />
+      <ContainerItems>
+        <H1>Olá!</H1>
+
+        <InputLabel>Nome</InputLabel>
+        <Input ref={inputName} placeholder='Nome' />
+
+        <InputLabel>Idade</InputLabel>
+        <Input ref={inputAge} placeholder='Idade' />
+
+        <Button onClick={addNewUser}>
+          Cadastrar <img alt='seta' src={Arrow} />
+        </Button>
+
+        <ul>
+          {users.map(user => (
+            <User key={user.id}>
+              <p>{user.name}</p>  <p>{user.age}</p>
+              <button onClick={() => deleteUser(user.id)}>
+                <img src={Trash} alt='lata-de-lixo' />
+              </button>
+            </User>
+          ))
+          }
+        </ul>
+
+      </ContainerItems>
+    </Container>
+
+  )
+
+}
+
+export default App
+
+=====================================================================================================================================================================
+05. DELETANDO UM USUÁRIO:================> https://plataforma.devclub.com.br/area/produto/item/259647
+
+
+// App.js:=======>
+
+import React, { useState, useRef, useEffect } from 'react'
+
+import Axios from 'axios'
+import People from './assets/people.svg'
+import Arrow from './assets/arrow.svg'
+import Trash from './assets/trash.svg'
+import { Container, Image, ContainerItems, H1, InputLabel, Input, Button, User } from './styles' //sem default escreve dessa forma
+
+//JSX - Misturar html com javascript
+// { id: Math.random(), name: "Edgar", age: 41 },
+// { id: Math.random(), name: "Sandra", age: 53 },
+function App() {
+  const [users, setUsers] = useState([]) // ASSIM CRIAMOS UM ESTADO NO REACT
+  const inputName = useRef()
+  const inputAge = useRef()
+
+  async function addNewUser() {
+    const { data: newUser } = await Axios.post("http://localhost:3001/users", { 
+      name: inputName.current.value, 
+      age: inputAge.current.value, 
+    })
+    setUsers([...users, newUser]) 
+    // console.log(inputName.current.value)
+    // console.log(inputAge.current.value) 
+        
+  }
+//=================================================================================================
+//REACT HOOK => USEEFFECT (Efeito Colateral) // () =>{}
+
+A função é chamada quando (2 Condições): 
+A minha aplicação inicia. (A página carregou useEffect é chamado!).
+Quando um estado que está no array de dependênciado useEffect é alterado.
+*/
+  useEffect(() => {
+
+    async function fetchUsers() {
+
+      const { data: newUsers } = await Axios.get("http://localhost:3001/users")
+
+      setUsers(newUsers)
+    }
+
+    fetchUsers()
+
+  }, [])
+
+//==================================================================================================
+  async function deleteUser(userId) {
+
+    await Axios.delete(`http://localhost:3001/users/${userId}`)
+
+    const newUsers = users.filter(user => user.id !== userId)
+
+    setUsers(newUsers)
+
+  }
+
+
+  return (
+    <Container>
+      <Image alt='logo-imagem' src={People} />
+      <ContainerItems>
+        <H1>Olá!</H1>
+
+        <InputLabel>Nome</InputLabel>
+        <Input ref={inputName} placeholder='Nome' />
+
+        <InputLabel>Idade</InputLabel>
+        <Input ref={inputAge} placeholder='Idade' />
+
+        <Button onClick={addNewUser}>
+          Cadastrar <img alt='seta' src={Arrow} />
+        </Button>
+
+        <ul>
+          {users.map(user => (
+            <User key={user.id}>
+              <p>{user.name}</p>  <p>{user.age}</p>
+              <button onClick={() => deleteUser(user.id)}>
+                <img src={Trash} alt='lata-de-lixo' />
+              </button>
+            </User>
+          ))
+          }
+        </ul>
+
+      </ContainerItems>
+    </Container>
+
+  )
+
+}
+
+export default App
+
+=====================================================================================================================================================================
+06. INICIANDO CRIAÇÃO DA TELA DE LISTAGEM DE USUÁRIOS:================> https://plataforma.devclub.com.br/area/produto/item/259648
+
+instalar a biblioteca:
+npm install react-router-dom
+         OU
+yarn add react-router-dom
+
+https://v5.reactrouter.com/web/guides/quick-start
+
+=====================================================================================================================================================================
+07. ESTILIZANDO TELA DE LISTAGEM DE USUÁRIOS:================> https://plataforma.devclub.com.br/area/produto/item/259649
+
+
+=====================================================================================================================================================================
+08. ATUALIZAÇÃO - REACT ROUTER DOM V6:================> https://plataforma.devclub.com.br/area/produto/item/259654      
+
+Nas próximas aulas vamos aprender sobre o React Router Dom.
+Porém, recentemente tivemos uma grande atualização dessa biblioteca e alguns recursos foram atualizados.
+Nas aulas seguintes eu ensino a versão antiga, pois ainda é AMPLAMENTE utilizada no mercado, se eu ensinar apenas a versão mais moderna, você pode não entender a grande maioria dos projetos em React, essas migrações demoram um tempo para serem feitas na maioria dos projetos.
+Porém, criei uma aula onde falo de todas as diferenças da versão 5 para a 6.
+Link da Aula:
+
+12. ATUALIZAÇÃO - REACT ROUTER DOM V6:================> https://plataforma.devclub.com.br/area/produto/item/279528
+
+DevClub
+Formação completa para sair do ZERO e se tornar um Programador(a) de sucesso!
+DevClub
+Se quiser seguir, e fazer como eu faço nas próximas aulas, você pode instalar o React Router Dom v5. Não terá nenhum prejuízo ao seu projeto ou a sua evolução como Programador ou Programadora.
+
+Para instalar a versão 5, use o seguinte comando:
+yarn add react-router-dom@5
+
+NA VERSÃO "react-router-dom@6" MUDA ALGUNS COMANDOS:
+Switch => Routes
+useHistory => UseNavigate
+history => navigate
+component => element
+exact => Não é mais utilizado
+
+obs: yarn add react-router-dom@latest => última Versão
+
+=====================================================================================================================================================================
+09. CRIANDO AS ROTAS DA NOSSA APLICAÇÃO:================> https://plataforma.devclub.com.br/area/produto/item/259651
+
+// Routes.js:============>
+
+import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import Home from "./containers/Home"
+import Users from "./containers/Users"
+
+function Routes() {
+    return (
+        <Router >
+            <Switch>
+                <Route exact path='/' component={Home} />
+                <Route exact path='/usuarios' component={Users} />
+            </Switch>
+
+
+        </Router >
+
+
+    )
+}
+
+export default Routes
+
+
+/ index.js:=======>
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import Routes from './routes';
+import GlobalStyle from './styles/globalStyle';
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<><Routes /> <GlobalStyle /></>);
+
+=====================================================================================================================================================================
+10. NAVEGANDO ENTRE TELAS COM O LINK:================> https://plataforma.devclub.com.br/area/produto/item/259652
+
+ yarn global remove react-router-dom@6.8.1
+
+npx create-react-app@latest other-project-react
