@@ -1,16 +1,18 @@
 // App.js:=======>
 
+//JSX - Misturar html com javascript
+
 import React, { useState, useRef } from 'react';
 import { useHistory } from 'react-router-dom'
 
 import Axios from 'axios';
 import People from '../../assets/people.svg';
 import Arrow from '../../assets/arrow.svg';
-import { Container, Image, ContainerItems, H1, InputLabel, Input, Button } from './styles' //sem default escreve dessa forma
+import H1 from '../../components/title'
+import { Container, Image, ContainerItems, InputLabel, Input, Button } from './styles' //sem default escreve dessa forma
 
-//JSX - Misturar html com javascript
-// { id: Math.random(), name: "Edgar", age: 41 },
-// { id: Math.random(), name: "Sandra", age: 53 },
+
+
 function App() {
   const [users, setUsers] = useState([]) // ASSIM CRIAMOS UM ESTADO NO REACT
   const history = useHistory()
@@ -18,17 +20,16 @@ function App() {
   const inputAge = useRef()
 
   async function addNewUser() {
-    const { data: newUser } = await Axios.post("http://localhost:3001/users", { 
-      name: inputName.current.value, 
-      age: inputAge.current.value, 
+    const { data: newUser } = await Axios.post("http://localhost:3001/users", {
+      name: inputName.current.value,
+      age: inputAge.current.value,
     })
-    setUsers([...users, newUser]) 
-    // console.log(inputName.current.value)
-    // console.log(inputAge.current.value) 
-   history.push('/usuarios')     
+    setUsers([...users, newUser])
+
+    history.push('/usuarios')
   }
 
-//=====================================================================================================================================================================
+  //=====================================================================================================================================================================
 
 
   return (
@@ -55,31 +56,3 @@ function App() {
 
 export default App
 
-/*
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
-
-*/

@@ -1,5 +1,9 @@
 // App.js:=======>
 
+//JSX - Misturar html com javascript
+// { id: Math.random(), name: "Edgar", age: 41 },
+// { id: Math.random(), name: "Sandra", age: 53 },
+
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 
@@ -7,11 +11,10 @@ import Axios from 'axios'
 import Avatar from '../../assets/avatar.svg'
 import Arrow from '../../assets/arrow.svg'
 import Trash from '../../assets/trash.svg'
-import { Container, Image, ContainerItems, H1, Button, User } from './styles' //sem default escreve dessa forma
+import H1 from '../../components/title'
+import { Container, Image, ContainerItems, Button, User } from './styles' //sem default escreve dessa forma
 
-//JSX - Misturar html com javascript
-// { id: Math.random(), name: "Edgar", age: 41 },
-// { id: Math.random(), name: "Sandra", age: 53 },
+
 function Users() {
   const [users, setUsers] = useState([]) // ASSIM CRIAMOS UM ESTADO NO REACT 
 
@@ -84,31 +87,3 @@ Quando um estado que está no array de dependênciado useEffect é alterado.
 
 export default Users
 
-/*
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
-
-*/

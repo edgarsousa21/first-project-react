@@ -38,17 +38,6 @@ height: 150vh;
 min-height: calc(100vh - 170px);
 `
 
-export const H1 = styled.h1`
-font-style: normal;
-font-weight: 700;
-font-size: 34px;
-line-height: 40px;
-text-align: center;
-color: #FFFFFF;
-margin-bottom: 80px;
-`
-
-
 export const Button = styled.button`
 cursor: pointer;
 
