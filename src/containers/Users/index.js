@@ -11,8 +11,10 @@ import Axios from 'axios'
 import Avatar from '../../assets/avatar.svg'
 import Arrow from '../../assets/arrow.svg'
 import Trash from '../../assets/trash.svg'
-import H1 from '../../components/title'
-import { Container, Image, ContainerItems, Button, User } from './styles' //sem default escreve dessa forma
+import H1 from '../../components/Title'
+import Button from '../../components/Button'
+import ContainerItens from '../../components/ContainerItens'
+import { Container, Image, User } from './styles' //sem default escreve dessa forma
 
 
 function Users() {
@@ -59,7 +61,7 @@ Quando um estado que está no array de dependênciado useEffect é alterado.
   return (
     <Container>
       <Image alt='logo-imagem' src={Avatar} />
-      <ContainerItems>
+      <ContainerItens inBlur={true}>
         <H1>Usuários</H1>
 
         <ul>
@@ -74,11 +76,11 @@ Quando um estado que está no array de dependênciado useEffect é alterado.
           }
         </ul>
 
-        <Button onClick={goBackPage}>
+        <Button isBack={true} onClick={goBackPage}>
           <img alt='seta' src={Arrow} /> Voltar
         </Button>
 
-      </ContainerItems>
+      </ContainerItens>
     </Container>
 
   )

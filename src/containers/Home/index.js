@@ -8,8 +8,10 @@ import { useHistory } from 'react-router-dom'
 import Axios from 'axios';
 import People from '../../assets/people.svg';
 import Arrow from '../../assets/arrow.svg';
-import H1 from '../../components/title'
-import { Container, Image, ContainerItems, InputLabel, Input, Button } from './styles' //sem default escreve dessa forma
+import H1 from '../../components/Title'
+import ContainerItens from '../../components/ContainerItens';
+import Button from '../../components/Button';
+import { Container, Image, InputLabel, Input } from './styles' //sem default escreve dessa forma
 
 
 
@@ -35,7 +37,7 @@ function App() {
   return (
     <Container>
       <Image alt='logo-imagem' src={People} />
-      <ContainerItems>
+      <ContainerItens>
         <H1>Olá!</H1>
 
         <InputLabel>Nome</InputLabel>
@@ -48,7 +50,7 @@ function App() {
           Cadastrar <img alt='seta' src={Arrow} />
         </Button>
 
-      </ContainerItems>
+      </ContainerItens>
     </Container>
   )
 
